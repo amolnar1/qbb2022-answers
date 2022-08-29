@@ -39,4 +39,30 @@ this is the output:
 14- 228
 15- 678
 
-c. to determine which fraction comprises the largest fraction of the genome, we would need to make a 5th column in the file determining how many basepairs comprise the region of interrest (subtrating the start from the stop column). Next, we would need to sort by regions 1-15 and then count how many basepairs total are in our new 5th column per region. Whichever has the most basepairs is the largest. We could also sort by size of the 5th column, whichever section has the most basepairs, that corresponding gene region would contain the largest fraction of the genome. 
+c. to determine which fraction comprises the largest fraction of the genome, we would need to make a 5th column in the file determining how many basepairs comprise the region of interest (subtrating the start from the stop column). Next, we would need to sort by regions 1-15 and then count how many basepairs total are in our new 5th column per region. Whichever has the most basepairs is the largest. We could also sort by size of the 5th column, whichever section has the most basepairs, that corresponding gene region would contain the largest fraction of the genome. 
+
+4. to determine the amount of individuals per super population:
+b. we would search using grep for 'AFR', then cut out the 2nd column to only look at the smaller populations within 'AFR', we would then sort these and then determine how many of each unnique subpopulation there are using uniq -c 
+
+grep 'AFR' integrated_call_samples.panel | cut -f 2 |sort| uniq -c
+
+results: 
+ 123 ACB
+ 112 ASW
+ 173 ESN
+ 180 GWD
+ 122 LWK
+ 128 MSL
+ 206 YRI
+
+c. we cut out the 3rd column which had the super population data, then we sorted this data so all of the repeats would be next to each other. We then used uniq -c to count each uniq occurance
+cut -f 3 integrated_call_samples.panel | sort | uniq -c 
+
+results: 
+1044 AFR
+ 535 AMR
+ 673 EAS
+ 670 EUR
+ 661 SAS
+ 
+5. 
