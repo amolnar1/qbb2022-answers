@@ -2,8 +2,8 @@
 
 #USAGE: bash exercise1.sh input_VCF
 
-for nuc in A C G T
+for nuc in C 
 do
   echo "Considering " $nuc
-  awk '/^#/{next} {if ($4 == $nuc) {print $5}}' $1 | sort | uniq -c
+  awk -v awkvar="$nuc" '/^#/{next} {if ($4 == awkvar) {print $5}}' $1 | sort | uniq -c
 done
