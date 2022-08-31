@@ -82,3 +82,9 @@ resultsS:
 15
 e. Depending on the dataset, it can appear more than once. AF can denote allele frequency and will always be in the vcf file. In this data set, AF denotes africa so it appears multiple times depending on where the sample is taken from
 f. You would need to select for any line contaning 'AFR' and then pull out any value from 0-9 connected to the AFR_AF= statement. You could probably do this with awk.
+
+
+
+ grep -Ew
+ - E for multiple patterns, -w for exact match with pipes between it worked!!!!!
+ 
