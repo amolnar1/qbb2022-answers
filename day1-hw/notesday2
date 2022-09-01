@@ -1,0 +1,59 @@
+how to merge on git:
+git config pull.rebase true
+before you do a pull need committed changes
+-save files and then git add to savee changes to rebo
+git status will tell you everything about rebo and if u need to push things
+
+
+python lecture notes:
+whatever side of colon left blank, taking that sife
+fruit[:2] denoting everything in list from 0-2
+fruit.append(strawberries) -- adds 'strawberries' to the list fruit
+fruit.insert(5,strawbs) -- inserts 'strawbs' at the 5th position
+- insert lets it know we are adding another item
+you can't edit tuple : [(false, 'banana')]
+- need to delete it and add new item to list
+to make tuple:
+a=(1,)
+a=tuple([1])
+
+open file, make list (initalize out list), read file line by line
+line is a string, break up line by tabs, need to store it, go to next line, close file
+
+can only import variable, functions, and classes
+
+print(f"Line {i} appears malformed", file=sys.stderr)
+## f allows us to put variable {i} in
+
+practical python:
+
+tuple - list that never changes with an ordering to it, can only hold immutable objects
+dictonary - stuff in it and can come out but there is no ordering, will always come in pairs, very easy to search key not for value 
+
+
+##what is 'i'?
+for item in L:
+##allows us to get stuff out of the list
+	item = item + 1
+	##item just gets a copy out of the list L, and list L is not modified 
+
+for i in range(3):
+##i is = 0, then 1, 2 etc through the list
+	L[i]
+	##allows us to modify the items in the list, replaces it with the output of the for loop for that item position
+	##doesn't matter if its 'i', 'j' etc. as long as it wasn't a previous variable
+
+{} defines a dicotnary originally
+
+usage statements:
+usage: mycode.py (name of the program)
+##then a list of the options
+	-n : number of X
+	##not required but optional: []
+usage: mycode.py [n, etc]
+##after that we have our arguments
+##then our optional arguments
+idk what any of this means bruv
+
+chmod a+x
+##a is everybody, + is add, x is execute

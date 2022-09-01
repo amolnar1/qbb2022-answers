@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+
+## converting script into functin
+
+import sys
+##allows us to make code more general so we can plug in any file we want with it 
+def morningday2(fname):
+
+	##open our file and put file stream in fs
+	fs = open(fname, mode='r')
+	##creating empty list to hold entries
+	bed = []
+	data_types = [str, int, int, str, float, str]
+	## saying these are all our data types^
+	##go line by line through file
+	try:
+        
+        for line in fs:
+	##get rid of new line character and split into seperate fields
+            fields = line.rstrip().split("\t")
+        
+		## previous commands '##' so that we can run any bed file, 1-6
+		## not forcing it to only look at first 3 fields
+		
+		##name relevant fields, converting to intergers when needed
+		##chrom = fields[0]
+		##start = int(fields[1])
+		##int is converting strings into intergers
+		##end = int(fields[2])
+		##create list of fields and put in bed list
+		
+		    for i in range(min(len(data_types),len(fields))):
+			    if fields[i] != ".":
+		
+		##min- look at number of data types(6), look at number of fields
+		##go through first 6 or smallest number of fields
+		
+				        fields[1] = data_types[i](fields[i])
+				##get thing to convert field
+		
+		bed.append(fields[:min(len(data_types),len(fields))])
+        except:
+            pirnt(f"line {h} is malformed", file=sys.stderr)
+		
+	fs.close()
+	return bed
+    
+##if this script is run from commmand line, than name of the program is the main program being run
+##allows us to run this as our own code or import it into something else
+if _name_ == "_main_":        
+	bed = morningday2(sys.argv[1])
+
+	##pull out first 2 entries as list and look at each entry and variable 
+	for i in range (2):
+		print(bed[1])
+	

@@ -1,0 +1,27 @@
+PLINK v1.90b6.21 64-bit (19 Oct 2020)
+Options in effect:
+  --allow-extra-chr
+  --out hw3pca
+  --pca 3
+  --vcf ALL.chr21.shapeit2_integrated_v1a.GRCh38.20181129.phased.vcf.gz
+
+Hostname: bootcamp-62.win.ad.jhu.edu
+Working directory: /Users/cmdb/qbb2022-answers/day3
+Start time: Wed Aug 31 16:34:17 2022
+
+Random number seed: 1661978057
+16384 MB RAM detected; reserving 8192 MB for main workspace.
+--vcf: hw3pca-temporary.bed + hw3pca-temporary.bim + hw3pca-temporary.fam
+written.
+976599 variants loaded from .bim file.
+2548 people (0 males, 0 females, 2548 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to hw3pca.nosex .
+Using up to 8 threads (change this with --threads).
+Before main variant filters, 2548 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+976599 variants and 2548 people pass filters and QC.
+Note: No phenotypes present.
+Relationship matrix calculation complete.
+--pca: Results saved to hw3pca.eigenval and hw3pca.eigenvec .
+
+End time: Wed Aug 31 16:36:09 2022
