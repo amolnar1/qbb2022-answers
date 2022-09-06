@@ -1,0 +1,5 @@
+# Feedback day2-homework
+
+You're annotation of the VCF parser looks really good. You appear to understand what each section is doing and why. Your IDsnpmatcher script looks good. The comments are helpful for following the logic. You're just missing one piece, which in this case doesn't matter much but would for any downstream use of the labeled VCF records. You get the ID from the dictionary, but you don't replace the missing entry in the record with the ID you retrieved. If you did anything with the VCF records after this, they would still be missing the SNP IDs. Also, while it looks like you code works, you never recorded the script output in your README file, so I can't confirm that you got the right answer.
+
+Overall, it looks like you have a good enough understanding of dictionaries to use them effectively in your own code. Great job and keep up the good work!
