@@ -1,0 +1,3 @@
+# Feedback day3-homework
+
+Your code all looks good. However you are missing the commands for annotating the PCA values with the sample metadata. Clearly you were successful in doing so, but it would be good to show your work, so to speak. Also, you are missing all of the plots. If you could rerun your code and add the plots to your repo, it would be appreciated. Otherwise, you appear to be in good shape. Keep up the good work!
