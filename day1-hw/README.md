@@ -74,8 +74,22 @@ Considering  C
  
  the first error is that the file is not tab deliminated we can fix this by adding:
  
- awk 'BEGIN{OFS="\t"} {print}' variants.bed > deliminatedvariants.bed
- awk 'BEGIN{OFS="\t"} {print}' random_snippet.vcf > deliminatedsnip.vcf
- ## both files need tab deliminated and this tab deliminates them
+ awk -v OFS='\t' '/^#/{next} {print $1,$2-1, $2}' $1 
+
+the second error is that both columns need numeric sorting, we can fix this by adding:
+\sort -k1,1n -k2,2n > variants.sorted.bed
+  
+the final line of code is:
+awk -v OFS='\t' '/^#/{next} {print $1,$2-1, $2}' $1 |  \sort -k1,1n -k2,2n > variants.sorted.bed
+
+I dont know the sorting error message exactly, i had a bad file and originally could not get it to tab deliminate.
+I knew there was a sorting error tho so i fixed that in the code before i realized my file was bad and could see the second error message.
+
+To count variants, add | wc at the end of the last line of code
+There are 10293 variants and 200 genes.
+We can determine variants by just | wc for the bedtools output, giving 10293 lines or variants
+We can then add | sort -u -k7,7 | to sort by column 7 for unique terms, which allows us to sort by uniqe gene name and then compile them
+wc then allows us to get the count of lines, which becomes 200 after this 
+
 
   
