@@ -75,7 +75,7 @@ Considering  C
  the first error is that the file is not tab deliminated we can fix this by adding:
  
  awk 'BEGIN{OFS="\t"} {print}' variants.bed > deliminatedvariants.bed
- awk 'BEGIN{OFS="\t"} {print}' ~/data/vcf_files/random_snippet.vcf > deliminatedsnip.vcf
+ awk 'BEGIN{OFS="\t"} {print}' random_snippet.vcf > deliminatedsnip.vcf
  ## both files need tab deliminated and this tab deliminates them
 
   

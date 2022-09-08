@@ -1,4 +1,7 @@
 # QBB2022 - day4 -- lunch
+
+Exercise 1:
+
 ##Break the counts of de novo mutations down into maternally inherited versus paternally inherited de novo mutations 
 cut -d ',' -f 5,6  aau1043_dnm.csv | sort | uniq -c | grep 'father' > 1043_father.csv
 cut -d ',' -f 5,6  aau1043_dnm.csv | sort | uniq -c | grep 'mother' > 1043_mother.csv
@@ -33,3 +36,13 @@ sed -r 's/ +/,/g' combined_1043.csv > final_1043_p.csv
 join -t ',' -1 1 -2 1 final_1043_p.csv sorted_aau1043_p.csv > pt1_final_day5.csv
 
 id, mother count, father count, father age, mother age 
+
+
+Exercise 2:
+The annotated code is save as 1043_regression.py and is annotated with results and functions of code.
+
+3. The relationship for mother count is significant, the p value is 0.011 < 0.05.
+There are 2.5040 mutations for every 0.3776 increase in age for the mother
+
+4. The relationship for the father count is significant, the p value comes up as 0.000 < 0.05
+For every 1.3538 increase in age for the father, the average number of mutations goes up by 10.3263

@@ -1,1 +1,15 @@
 conda list : will show you all the conda stuff installed and can fidnt he version fo the software through this 
+
+lol i named my day4-morning environment daay4-morning 
+installing samtools: conda install samtools==1.1
+which samtools: tells us where samtools is
+
+cleaning up my git stuff:
+git rm --cached ALL_chr21_AF.txt 
+## to get rid of specified file in git
+git status ##to check that its gone
+git commit -m"QWASGH"
+git push
+##then check in git repo
+
+afternoon notes:

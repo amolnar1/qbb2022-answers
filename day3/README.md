@@ -25,6 +25,8 @@ ax.scatter(hw3pca["pca1"], hw3pca["pca2"])
 ax.set_xlabel("PCA1")
 ax.set_ylabel("PCA2")
 
+fig.savefig( "PCA1_2_scatter" + ".png" )
+##save plot
 plt.show()
 
 ##this is code for 1v3
@@ -38,6 +40,7 @@ ax.scatter(hw3pca["pca1"], hw3pca["pca3"])
 ax.set_xlabel("PCA1")
 ax.set_ylabel("PCA3")
 
+fig.savefig( "PCA1_3_scatter" + ".png" )
 plt.show()
 
 ##3. here is the code I used for pt 3
@@ -73,6 +76,8 @@ for each in superpop:
 ax.set_xlabel("PCA1")
 ax.set_ylabel("PCA2")
 ax.set_title("PCA 1 versus 2 Determined by Superpopulation")
+
+fig.savefig( "PCA1_2_superpop" + ".png" )
 plt.show()
 ##we then add a legened, label axis, and label the graph
 ##this approach can be applied to subpop and gender by just changing the specifics to that corresponding column
@@ -98,6 +103,7 @@ for each in subpop:
 ax.set_xlabel("PCA1")
 ax.set_ylabel("PCA2")
 ax.set_title("PCA 1 versus 2 Determined by Subpopulation")
+fig.savefig( "PCA1_2_subpop" + ".png" )
 plt.show() 
 
 ##start gender
@@ -120,5 +126,5 @@ for each in sex:
 ax.set_xlabel("PCA1")
 ax.set_ylabel("PCA2")
 ax.set_title("PCA 1 versus 2 Determined by Gender")
-
+fig.savefig( "PCA1_2_sex" + ".png" )
 plt.show()     
