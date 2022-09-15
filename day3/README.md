@@ -13,6 +13,7 @@ plink --vcf ALL.chr21.shapeit2_integrated_v1a.GRCh38.20181129.phased.vcf.gz
 
 ##we are comparing allele frequency to population and seeing the variation and similarities between individduals
 
+this is in day3hw.py 
 code for pt 2:
 ##this is the code to make the graph for 1v2
 hw3pca = np.genfromtxt("hw3pca.eigenvec", dtype = None, 

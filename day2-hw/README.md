@@ -2,6 +2,7 @@
 
 1. my file actualvcfParser.py has the annotated files
 
+
 2. 
 
 ##we want to compare positions within random and dbSNPs and if the positions are the same then we want to replace the random ID with the dbSNPs ID
