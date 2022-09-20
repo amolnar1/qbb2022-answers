@@ -3,6 +3,7 @@
 import numpy as np
 import sys
 from fasta import readFASTA
+##import the right stuff
 
 input_sequences = readFASTA(open(sys.argv[1]))
 
@@ -41,7 +42,8 @@ for i in range(len(sequence1)+1) :
 for j in range(len(sequence2)+1) :
     F_matrix[0,j] = j * gap_penalty
     Trace_matrix[0,j] = 2
-
+    
+##checking the stuff cause it didnt work:
 #trace_vals, trace_counts = np.unique(Trace_matrix, return_counts = True)
 #print(trace_vals)
 #print(trace_counts)
@@ -170,25 +172,32 @@ for i in range(1, len(sequence1)+1):
 #and building our alignments
 seq1_alignment = ''
 seq2_alignment = ''
+## need to put the stuff in a list 
 
 next_value = Trace_matrix[i, j]
+##going through the different values in the matrixs
 traceback = [next_value]
 while i > 0 and j > 0 :
+    ##going through the while loop so it doesnt go one forever
     if next_value == 2:
         seq1_alignment = "-" + seq1_alignment
         seq2_alignment = sequence2[j-1] + seq2_alignment
+        ##making it move horizontally through the alignment for seq 2 or keeping the seq 1 value 
         j = j-1
     elif next_value == 1:
         seq1_alignment = sequence1[i-1] + seq1_alignment
         seq2_alignment = sequence2[j-1] + seq2_alignment
         i = i-1
         j = j-1
+        ##making it ove through the sequence diagnoally and recoriding that value for i and j for sequence 1 and 2 
     elif next_value == 3:
         seq1_alignment = sequence1[i-1] + seq1_alignment
         seq2_alignment = "-" + seq2_alignment
         i = i -1
+        ##making it move through the sequence vertically through it, recording the alignment for seq2 but a gap for seq1 
     next_value = Trace_matrix[i, j]
     traceback.append(next_value)
+    ##going to the next value 
 
 uniq_vals, uniq_counts = np.unique(traceback, return_counts = True)
 print(uniq_vals)
@@ -196,6 +205,8 @@ print(uniq_counts)
 print(seq1_alignment)
 print(seq2_alignment)
 
+
+##me trying to figure it out before haha:
 
 # while i > 0
 #
