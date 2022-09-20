@@ -30,7 +30,7 @@ Trace_matrix = np.zeros((len(sequence1)+1, len(sequence2)+1))
 # first column, based on the gap penalty. Let's fill in the
 # first column.
 
-gap_penalty = float(sys.argv[3])
+gap_penalty = 300
 
 for i in range(len(sequence1)+1) :
     F_matrix[i,0] = i * gap_penalty
