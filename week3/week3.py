@@ -95,5 +95,5 @@ fig.tight_layout()
 ##this makes the graph not look bad
 
 plt.show()
-##we then show the plot
+##we then show the plotoooi
 
