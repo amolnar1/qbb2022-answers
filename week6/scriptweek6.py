@@ -39,13 +39,19 @@ def main():
     ##picking things out by the starts and the ends of the things
     
     #print(data1['F1'] >= start_bin)
-    
+
     data1_pos = numpy.where( (data1['F1'] >= start_bin) & (data1['F2'] <= end_bin) ) 
+    ##filtering the stuff by the start and end 
     data1_filtered = (data1[data1_pos])
+    ##keeping track of the positions
     data1_filtered['score'] = numpy.log( data1_filtered['score'])
+    ##logging the score 
     data1_filtered['F1'] = data1_filtered['F1'] - start_bin
+    ##making sure the start bin is 0 and we go from there
     data1_filtered['F2'] = data1_filtered['F2'] - start_bin
+    ##doing the same as above but for F2
     data1_filtered['score'] =  data1_filtered['score'] - numpy.min(data1_filtered['score'])
+    ##subtracting the min value from everything in score part to keep consistent with above 
     #print(data1_filtered)
     
     data2_pos = numpy.where( (data2['F1'] >= start_bin) & (data2['F2'] <= end_bin) ) 
@@ -57,8 +63,12 @@ def main():
     #print(data2_filtered)
     
     mat1 = numpy.zeros( [end_bin - start_bin + 1, end_bin - start_bin + 1] )
+    ##this is us gettin the data setup for plotting
+    ##we need to make an array of zeroes the amount of the points we have
     mat1[data1_filtered['F1'], data1_filtered['F2']] = data1_filtered['score']
+    ##these next parts is us putting the data in
     mat1[data1_filtered['F2'], data1_filtered['F1']] = data1_filtered['score']
+    ##we need to do this part so that both sides are filled in
     ##putting our stuff in the matrix
     
     #print(mat1)
@@ -99,7 +109,7 @@ def main():
     ax[2].set_title('dCTCF - ddCTCF')
     fig.tight_layout()
     plt.show()
-    fig.savefig( "week6" + ".png" )
+    fig.savefig( "week6.subbed" + ".png" )
     
     #####################################
     ######################################

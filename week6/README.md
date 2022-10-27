@@ -24,3 +24,12 @@ What constitutes the majority of invalid 3C pairs? What does it actually mean
  # What does the highlighted signal indicate?
  things that have the highlighted signal have the highest interactions between each other.
  
+ so for the full data we run it with this stuff:
+ 
+./scriptweek6.py ddCTCF_full.6400.matrix dCTCF_full.6400.matrix 6400_bins.bed 
+dCTCF_full.40000.matrix output
+
+
+for the not full data we run it with thist stuff:
+
+./scriptweek6.py ddCTCF_ontarget_6400_iced.matrix dCTCF_ontarget_6400_iced.matrix dCTCF_ontarget_6400_abs.bed dCTCF_full.40000.matrix output
