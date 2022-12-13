@@ -13,10 +13,10 @@ from statsmodels.stats import multitest
 input_arr = np.genfromtxt("dros_gene_expression.csv", delimiter=',', names=True, 
 dtype=None, encoding='utf-8')
 
-col_names = list(input_arr.dtype.names)
-row_names = input_arr['t_name']
+bing_bong = list(input_arr.dtype.names)
+yabbagabbagoo = input_arr['t_name']
 
-fpkm_values = input_arr[col_names[1:]]
+fpkm_values = input_arr[bing_bong[1:]]
 ##putting in our array everyhing but the fpkm names because we do not want them
 
 fpkm_values_2d = rfn.structured_to_unstructured(fpkm_values, dtype=np.float)
@@ -55,7 +55,7 @@ plt.show()
 
 
 plt.figure()
-dendrogram_array =  scipy.cluster.hierarchy.dendrogram(transpose_array, labels = col_names[1:])
+dendrogram_array =  scipy.cluster.hierarchy.dendrogram(transpose_array, labels = bing_bong[1:])
 fig.tight_layout()
 fig.savefig( "week9.dendrogram" + ".png" )
 plt.show()
@@ -72,8 +72,8 @@ p_vals_stage_10 = []
 
 for i in range(log_array.shape[0]):
     list_of_tuples = []
-    for j in range(len(col_names[1:])):
-        list_of_tuples.append((row_names[i],log_array[i,j], sexes[j], stages[j]))
+    for j in range(len(bing_bong[1:])):
+        list_of_tuples.append((yabbagabbagoo[i],log_array[i,j], sexes[j], stages[j]))
     longdf = np.array(list_of_tuples, dtype=[('transcript', 'S11'), ('fpkm', float), ('sex', 'S6'), ('stage', int)])
     model = smf.ols(formula = "fpkm ~ stage", data = longdf)
     results = model.fit()

@@ -93,7 +93,7 @@ axs[1,1].set_title("Read Depth Density")
 
 fig.tight_layout()
 ##this makes the graph not look bad
-
+fig.savefig( "week3" + ".png" )
 plt.show()
 ##we then show the plotoooi
 
